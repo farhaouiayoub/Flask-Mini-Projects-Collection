@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>مولد الحكمة العربية</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="container">
+        <div class="islamic-pattern top-pattern"></div>
+        
+        <div class="quote-container">
+            <div class="quote-box">
+                <div class="ornament ornament-right"></div>
+                <div class="ornament ornament-left"></div>
+                
+                <h1 class="title">حكمة اليوم</h1>
+                
+                <blockquote>
+                    <p class="quote-text">{{ quote[1] }}</p>
+                    <footer class="quote-author">— {{ quote[2] }}</footer>
+                </blockquote>
+            </div>
+            
+            <a href="{{ url_for('quote.index') }}" class="btn">حكمة جديدة</a>
+        </div>
+        
+        <div class="islamic-pattern bottom-pattern"></div>
+    </div>
+</body>
+</html>

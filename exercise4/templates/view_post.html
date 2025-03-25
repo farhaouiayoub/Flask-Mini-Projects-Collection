@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ post.title }}</h1>
+        <p class="post-date">{{ post.date.strftime('%Y-%m-%d %H:%M') }}</p>
+    </header>
+    
+    <main class="post-content">
+        <div class="content">
+            {{ post.content | replace('\n', '<br>') | safe }}
+        </div>
+        
+        <a href="{{ url_for('blog.index') }}" class="back-link">Back to Blog</a>
+    </main>
+</body>
+</html>

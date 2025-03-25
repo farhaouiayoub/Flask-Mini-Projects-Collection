@@ -1,0 +1,5 @@
+Flask==2.0.1
+Flask-SQLAlchemy==2.5.1
+SQLAlchemy==1.4.46
+Werkzeug==2.0.3
+# Add other dependencies your project uses here
