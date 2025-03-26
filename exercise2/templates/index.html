@@ -12,7 +12,10 @@
     <ul class="task-list">
         {% for task in tasks %}
         <li class="task-item {% if task.done %}done{% endif %}">
-            {{ task.title }}
+            <form action="{{ url_for('task.toggle_done', id=task.id) }}" method="post" style="display: inline;">
+                <input type="checkbox" onchange="this.form.submit()" {% if task.done %}checked{% endif %}>
+            </form>
+            <span>{{ task.title }}</span>
             <a href="{{ url_for('task.delete_task', id=task.id) }}" class="delete-btn" onclick="return confirm('Are you sure?')">Delete</a>
         </li>
         {% endfor %}

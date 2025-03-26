@@ -28,7 +28,7 @@ class UserModel:
         conn.close()
         return users
         
-    def add_user(self, name, email):
+    def add_user(self, name, email): # self :  instance de la classe
         conn = sqlite3.connect(self.db_name)
         c = conn.cursor()
         c.execute('INSERT INTO users (name, email) VALUES (?, ?)', (name, email))
