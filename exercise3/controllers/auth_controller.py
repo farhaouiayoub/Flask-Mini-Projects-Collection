@@ -27,7 +27,7 @@ def register():
         hashed_password = generate_password_hash(password)
         new_user = User(username=username, password=hashed_password)
         db.session.add(new_user)
-        db.session.commit()
+        db.session.commit() 
         
         flash('Account created successfully! Please login.')
         return redirect(url_for('auth.login'))
@@ -52,5 +52,6 @@ def login():
 
 @auth_blueprint.route('/logout')
 def logout():
-    session.pop('username', None)
+    session.pop('username', None) # Remove username from session
+    flash('You have been logged out')
     return redirect(url_for('auth.login'))

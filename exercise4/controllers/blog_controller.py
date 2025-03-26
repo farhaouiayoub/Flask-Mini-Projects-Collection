@@ -27,3 +27,7 @@ def add_post():
 def view_post(id):
     post = Post.query.get_or_404(id)
     return render_template('view_post.html', post=post)
+
+
+
+# Jinja2 est un moteur de template très utilisé en Python, notamment avec Flask et Django (via Django Template Language). Il permet d'afficher dynamiquement des articles ou d'autres types de contenus dans une page web.

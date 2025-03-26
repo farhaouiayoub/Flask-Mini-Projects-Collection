@@ -29,7 +29,7 @@ def get_book(id):
 
 @book_blueprint.route('/books', methods=['POST'])
 def add_book():
-    data = request.json
+    data = request.json 
     
     new_book = Book(
         title=data['title'],
